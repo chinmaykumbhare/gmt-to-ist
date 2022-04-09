@@ -11,7 +11,7 @@ function App() {
     const time = new Date();
     timeString = (time.getHours() + 5) > 24 ? time.getHours() + 5 - 24 : time.getHours() + 5;
     timeString += " : ";
-    timeString += (time.getMinutes() + 30) > 60 ? "0" +(time.getMinutes() + 30 - 60) : time.getMinutes() + 30;
+    timeString += (time.getMinutes() + 30) > 60 ? (time.getMinutes() + 30 - 60) : "0" +(time.getMinutes() + 30);
     // console.log(timeString);
     setTime(timeString);
   }
