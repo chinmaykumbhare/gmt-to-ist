@@ -4,7 +4,7 @@ import "./App.css";
 
 function App() {
 
-  const [time, setTime] = useState("");
+  const [time, setTime] = useState("loading...");
 
   function getTime() {
     let timeString = "";
