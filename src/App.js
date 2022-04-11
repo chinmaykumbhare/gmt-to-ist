@@ -9,7 +9,7 @@ function App() {
     let timeString = "";
     const time = new Date();
     timeString =
-      time.getHours() + 5 > 24 ? time.getHours() + 5 - 24 : time.getHours() + 5;
+      time.getHours() + 4 > 24 ? time.getHours() + 4 - 24 : time.getHours() + 4;
     timeString += " : ";
     timeString += time.getMinutes() >= 30 && time.getMinutes() < 40 ? "0" : "";
     timeString +=
