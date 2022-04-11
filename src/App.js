@@ -1,17 +1,21 @@
 import logo from "./logo.svg";
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
-
   const [time, setTime] = useState("loading...");
 
   function getTime() {
     let timeString = "";
     const time = new Date();
-    timeString = (time.getHours() + 5) > 24 ? time.getHours() + 5 - 24 : time.getHours() + 5;
+    timeString =
+      time.getHours() + 5 > 24 ? time.getHours() + 5 - 24 : time.getHours() + 5;
     timeString += " : ";
-    timeString += (time.getMinutes() + 30) > 60 ? (time.getMinutes() + 30 - 60) : "0" +(time.getMinutes() + 30);
+    timeString += time.getMinutes() >= 30 && time.getMinutes() < 40 ? "0" : "";
+    timeString +=
+      time.getMinutes() + 30 > 60
+        ? time.getMinutes() + 30 - 60
+        : time.getMinutes() + 30;
     // console.log(timeString);
     setTime(timeString);
   }
@@ -19,11 +23,11 @@ function App() {
   useEffect(() => {
     console.log("init");
     getTime();
-  }, [])
+  }, []);
 
-  setInterval((() => {
+  setInterval(() => {
     getTime();
-  }), 59000);
+  }, 59000);
 
   return (
     <div className="App">
