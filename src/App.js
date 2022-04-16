@@ -8,15 +8,17 @@ function App() {
   function getTime() {
     let timeString = "";
     const time = new Date();
-    timeString =
+    let hours =
       time.getHours() + 4 > 24 ? time.getHours() + 4 - 24 : time.getHours() + 4;
-    timeString += " : ";
-    timeString += time.getMinutes() >= 30 && time.getMinutes() < 40 ? "0" : "";
-    timeString +=
-      time.getMinutes() + 30 > 60
-        ? time.getMinutes() + 30 - 60
-        : time.getMinutes() + 30;
-    // console.log(timeString);
+    // timeString += " : ";
+    let minutes = time.getMinutes();
+    if (minutes >= 30) {
+      hours++;
+      minutes = minutes - 30;
+    } else {
+      minutes += 30;
+    }
+    timeString = hours + " : " + (minutes < 10 ? "0" : "") + minutes;
     setTime(timeString);
   }
 
