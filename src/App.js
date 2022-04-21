@@ -10,7 +10,6 @@ function App() {
     const time = new Date();
     let hours =
       time.getHours() >= 20 ? time.getHours() - 20 : time.getHours() + 4;
-    // timeString += " : ";
     let minutes = time.getMinutes();
     if (minutes >= 30) {
       hours++;
@@ -18,7 +17,6 @@ function App() {
       minutes = minutes - 30;
     } else {
       minutes += 30;
-      hours++;
       hours = hours >= 24 ? hours - 24 : hours;
     }
     timeString = hours + " : " + (minutes < 10 ? "0" : "") + minutes;
